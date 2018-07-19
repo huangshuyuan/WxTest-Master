@@ -1,0 +1,3 @@
+<!--pages/index/weather.wxml-->
+<text>pages/index/weather.wxml</text>
+<weather />

@@ -1,0 +1,85 @@
+<!--pages/home/home.wxml-->
+<!--banner  -->
+
+<loading hidden="{{loading}}">
+  加载中...
+</loading>
+<scroll-view>
+
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" bindchange="bindchange">
+    <block wx:for="{{slider}}" wx:key="unique">
+      <swiper-item data-id="{{item.id}}" data-url="{{item.linkUrl}}" bindtap="swiperClick">
+        <image src='{{item.picUrl}}' class='img'></image>
+      </swiper-item>
+    </block>
+  </swiper>
+  <!--仿京东  -->
+
+  <view class="big-logo">
+    <block wx:for-items="{{logos}}" >
+      <view class="logoinfo" bindtap='listitemClick' id='{{index}}'>
+        <image style="width:100rpx; height: 100rpx;" src="{{item.image}}" mode="aspectFit" />
+        <text class="logotext">{{item.title}}</text>
+      </view>
+    </block>
+  </view>
+
+  <!--滚动  -->
+  <scroll-view class="scroll-view_H" scroll-x="true" bindscroll="scroll" style="width: 100%">
+    <view class="swiper-tab">
+      <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" wx:if="{{currentTab==0}}" bindtap="swichNav">1111</view>
+      <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" wx:if="{{currentTab==1}}" bindtap="swichNav">2222</view>
+      <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">3333</view>
+      <view class="swiper-tab-list {{currentTab==3 ? 'on' : ''}}" data-current="3" bindtap="swichNav">4444</view>
+      <view class="swiper-tab-list {{currentTab==4 ? 'on' : ''}}" data-current="4 " bindtap="swichNav">5555</view>
+      <view class="swiper-tab-list {{currentTab==5 ? 'on' : ''}}" data-current="5" bindtap="swichNav">6666</view>
+      <view class="swiper-tab-list {{currentTab==6 ? 'on' : ''}}" data-current="6" bindtap="swichNav">7777</view>
+      <view class="swiper-tab-list {{currentTab==7 ? 'on' : ''}}" data-current="7" bindtap="swichNav">8888</view>
+    </view>
+  </scroll-view>
+  <swiper currentswipercurrent="{{currentTab}} " class="swiper-box " duration="300 " style="height:{{winHeight - 31}}px " bindchange="bindChange2">
+    <!-- 我是哈哈 -->
+    <swiper-item>
+      <view>11111</view>
+    </swiper-item>
+    <!-- 我是呵呵 -->
+    <swiper-item>
+      <view>22222</view>
+    </swiper-item>
+    <!-- 我是嘿嘿 -->
+    <swiper-item>
+      <view>33333</view>
+    </swiper-item>
+    <swiper-item>
+      <view>44444</view>
+    </swiper-item>
+    <swiper-item>
+      <view>55555</view>
+    </swiper-item>
+    <swiper-item>
+      <view>66666</view>
+    </swiper-item>
+    <swiper-item>
+      <view>77777</view>
+    </swiper-item>
+    <swiper-item>
+      <view>88888</view>
+    </swiper-item>
+  </swiper>
+</scroll-view>
+
+<!--底部  -->
+<view class="play-bar">
+   
+    <text class="play-bar-text">hello</text>
+   
+
+</view>
+
+<!--弹框  -->
+<action-sheet hidden="{{actionSheetHidden}}" bindchange="actionSheetChange">
+  <block wx:for="{{actionSheetItems}}">
+    <action-sheet-item class="item" bindtap="bind{{item}}">{{item}}</action-sheet-item>
+  </block>
+  <action-sheet-cancel class="cancel">取消</action-sheet-cancel>
+</action-sheet>

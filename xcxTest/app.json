@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/web/web",
+    "pages/index/index",
+    "pages/index/test",
+    "pages/index/list",
+    "pages/logs/logs",
+    "pages/index/baseuse",
+    "pages/index/weather",
+    "pages/index/maptest",
+    "pages/home/route/map"
+  ],
+  "plugins": {
+  
+    "mapPlugin": {
+      "version": "1.0.6",
+      "provider": "wx5bc2ac602a747594"
+    }
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#4F9566",
+    "navigationBarTitleText": "HSY",
+    "navigationBarTextStyle": "light",
+    "backgroundColor": "#4F9566",
+    "backgroundTextColor": "#fff"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "pages/index/icons/icon_home_n.png",
+        "selectedIconPath": "pages/index/icons/icon_home.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "测试",
+        "iconPath": "pages/index/icons/icon_log_n.png",
+        "selectedIconPath": "pages/index/icons/icon_log.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}

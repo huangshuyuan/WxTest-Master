@@ -1,0 +1,26 @@
+<!--index.wxml-->
+<view class='main'>
+
+  <scroll-view class="container">
+
+    <view class="userinfo">
+      <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+      <block wx:else>
+        <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      </block>
+    </view>
+    <view class="usermotto">
+      <text class="user-motto">{{motto}}</text>
+      <navigator url="/pages/index/test" open-type="switchTab" hover-class="other-navigator-hover">
+        <a type="default" catchtap="click" class='myButton'>定位</a>
+      </navigator>
+    </view>
+  <a  catchtap="base" class='myButton'>基本组件使用</a>
+
+    <button class='pay' catchtap='payclick'> 支付</button>
+    <button class='pay' catchtap='photo'>打开相册</button>
+    <button class='pay' catchtap='scan'>扫一扫</button>
+    <button class='pay' catchtap='phone'> 打电话</button>
+  </scroll-view>
+</view>
